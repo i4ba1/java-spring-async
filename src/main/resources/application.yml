@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: FunCinema
+
+# PostgreSQL Configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5434/moviedb
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  # JPA/Hibernate Properties
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  # Virtual Threads Configuration
+  threads:
+    virtual:
+      enabled: true
+
+# Server Configuration
+server:
+  port: 5713
+
+# Logging Configuration
+logging:
+  level:
+    org:
+      springframework: INFO
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+    com:
+      example: DEBUG
+
+# JWT Configuration
+jwt:
+  secret: 5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437
+  expiration: 86400000  # 1 day in milliseconds
+  refresh-expiration: 604800000  # 7 days in milliseconds
+
+# OTP Configuration
+otp:
+  expiration: 300000  # 5 minutes in milliseconds
+  length: 6

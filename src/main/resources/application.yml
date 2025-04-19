@@ -2,6 +2,23 @@ spring:
   application:
     name: FunCinema
 
+  # Email Configuration
+  mail:
+    # Choose one of these options:
+
+    # Option 1: Configure with actual values (for production)
+    host: smtp.gmail.com
+    port: 587
+    username: muhamadnizariqbal87@gmail.com
+    password: your-app-password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
 # PostgreSQL Configuration
   datasource:
     url: jdbc:postgresql://localhost:5434/moviedb
